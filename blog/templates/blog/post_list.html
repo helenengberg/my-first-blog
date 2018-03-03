@@ -3,16 +3,18 @@
         <title>Helens blogg</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Helens Blog</a></h1>
-        </div>
+    	<div>
+    <h1><a href="/">Helens blogg</a></h1>
+</div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Mitt första inlägg</a></h2>
-            <p>Jag är på en workshop och lär mig mer HTML.</p>
-        </div>
-
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+        
         <div>
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">Om mig</a></h2>
